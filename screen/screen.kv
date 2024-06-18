@@ -1,0 +1,135 @@
+MDFloatLayout:
+    
+    Image:
+        source: "img/location.png"
+        pos_hint: {'center_x': .5,'center_y': .95}
+        size_hint: .1, .1
+    MDLabel:
+        id: location
+        text: ""
+        color:
+        pos_hint: {'center_x': .5,'center_y': .89}
+        halign: 'center'
+        font_size: '20sp'
+    Image:
+        id: weather_img
+        source: ""
+        pos_hint: {'center_x': .5,'center_y': .77}
+        size_hint: .1, .1
+    MDLabel:
+        id: temperature
+        text: ""
+        markup: True
+        color:
+        pos_hint: {'center_x': .5,'center_y': .62}
+        halign: 'center'
+        font_size: '60sp'    
+    MDLabel:
+        id: weather
+        text: ""
+        pos_hint: {'center_x': .5,'center_y': .54}
+        halign: 'center'
+        font_size: '20sp'   
+    MDFloatLayout:
+        pos_hint: {'center_x': .3,'center_y': .4}
+        size_hint: .22, .1   
+        MDLabel:
+            id: humidity
+            text: ""
+            pos_hint: {'center_x': .8,'center_y': .6}
+            font_size: '16sp'   
+        Image:
+            source: "img/humidity.png"
+            pos_hint: {'center_x': .1,'center_y': .6}
+            size_hint: .6, .6
+        MDLabel:
+            text: "Humidity"
+            pos_hint: {'center_x': .8,'center_y': .3}
+            font_size: '14sp'   
+
+    MDFloatLayout:
+        pos_hint: {'center_x': .7,'center_y': .4}
+        size_hint: .22, .1   
+        MDLabel:
+            id: wind_speed
+            text: ""
+            pos_hint: {'center_x': .85,'center_y': .6}
+            font_size: '16sp'   
+        Image:
+            source: "img/speed.png"
+            pos_hint: {'center_x': .1,'center_y': .6}
+            size_hint: .4, .4
+        MDLabel:
+            text: "Wind Speed"
+            pos_hint: {'center_x': .75,'center_y': .3}
+            font_size: '14sp'         
+    MDFloatLayout:
+        size_hint_y: .3
+        canvas:
+            Color:
+                rgb: rgba(148, 117, 255, 255)
+        
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius: [10, 10, 0, 0]
+        MDFloatLayout:
+            pos_hint: {'center_x': .5,'center_y': .71}
+            size_hint: .9, .32
+            canvas:
+                Color:
+                    rgb: rgba(131, 69, 255, 255)
+            
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [6]
+            TextInput:
+                id: city_name
+                hint_text: 'Enter your City'
+                size_hint: 1, None
+                pos_hint: {'center_x': .5,'center_y': .5}
+                height: self.minimum_height
+                multiline: False
+                font_size: '20sp'
+                hint_text_color: 1, 1, 1, 1
+                foreground_color: 1, 1, 1,1
+                background_color: 1, 1, 1, 0
+                padding: 15
+                cursor_color: 1, 1, 1, 1
+                cursor_width: '2sp'
+        Button:
+            text: "Get Weather"
+            font_size: '20sp'
+            size_hint: .9, .32
+            pos_hint: {'center_x': .5,'center_y': .29}
+            background_color: 1, 1, 1, 0
+            color: rgba(131, 69, 255, 255)
+            on_release: app.search_weather()
+            canvas.before:
+                Color:
+                    rgb: 1, 1, 1, 1
+            
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [6]
+
+            
+        
+
+<AboutScreen>:
+    name: 'about'
+    MDBottomNavigation:
+        MDBottomNavigationItem:
+            name: 'home_tab'
+            text: 'Home'
+            icon: 'home'
+            on_tab_press: root.manager.current = 'home'
+        MDBottomNavigationItem:
+            name: 'about_tab'
+            text: 'About'
+            icon: 'help'
+    MDLabel:
+        text: 'About text'
+        halign: 'center'
