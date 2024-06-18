@@ -41,7 +41,13 @@ Usage
 Screenshots
 ----------
 
-[Insert screenshots of the app]
+## Screenshots
+
+### Screenshot 1
+![screenshot1](screenshots/img1.png)
+
+### Screenshot 2
+![screenshot2](screenshots/img2.png)
 
 License
 -------
