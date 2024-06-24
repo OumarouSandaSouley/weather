@@ -14,7 +14,7 @@ class WeatherApp(MDApp):
 
     dialog = None
 
-    api_key = ''
+    api_key = '81d5797a596c5eb5d9e79d5d23070266'
 
     def open_dialog(self):
         if not self.dialog:
